@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1730674095 "/home/leorigoni/laboefm/millikan/tex/main.tex" "main.pdf" "main" 1730674096
+["pdflatex"] 1730674611 "/home/leorigoni/laboefm/millikan/tex/main.tex" "main.pdf" "main" 1730674613
   "/etc/texmf/web2c/texmf.cnf" 1709242912 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/leorigoni/laboefm/millikan/tex/main.tex" 1730672208 711 8ac3f82e2ea1a48313d3b8eae0353041 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -79,12 +79,12 @@
   "graph2.pdf" 1730642799 13868 9cd2d519ef428fca7d2c3ce6692742aa ""
   "graph2.tex" 1730673812 267 280d62a80ea236795f6c27424f1614d0 ""
   "introduzione.tex" 1730673281 675 ab3bf4fc953adc347857a2e649c59468 ""
-  "main.aux" 1730674096 3817 132b9f85c2080372b0686a302577b2ac "pdflatex"
+  "main.aux" 1730674612 3832 9c72ee32102acd044502e11c346dea31 "pdflatex"
   "main.tex" 1730672208 711 8ac3f82e2ea1a48313d3b8eae0353041 ""
   "procedimento.tex" 1730674024 5074 c12dd50161086fd367bcf73b19a2186f ""
-  "qm.tex" 1730674073 4721 9fdd89e8a90bcd9fbb746ee5e947d9f4 ""
-  "qp.tex" 1730674056 3356 1b3e152683b7c320ae62242d69bb8ab9 ""
-  "vr.tex" 1730674095 5177 af55ef121470b9172b8528479df489df ""
+  "qm.tex" 1730674611 4857 78fa73a6e66a5cffc99b7a446bb0e3d4 ""
+  "qp.tex" 1730674513 3359 a9cf874bc17bb3ee0b8318a7fb7ee41c ""
+  "vr.tex" 1730674577 5284 4e73c82c5832ffaabab0068ef44c041c ""
   (generated)
   "main.aux"
   "main.log"
