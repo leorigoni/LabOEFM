@@ -1,19 +1,19 @@
 
 \section{Analisi dei dati}
 \subsection{Scarto quadratico medio}
-    Dopo aver preso le misure sulle velocità delle gocce d'olio siamo riusciti a risalire tramite la \eqref{raggio} ai raggi delle goccioline d'olio.\\
-    Ottenuto il raggio, è bastato inserirlo nelle \eqref{caricapos}, \eqref{caricaneg} per stimare le cariche sulle goccioline d'olio.\\
+    Dopo aver preso le misure sulle velocità delle gocce d'olio siamo riusciti a risalire tramite l'equazione \eqref{raggio} ai raggi delle goccioline d'olio.\\
+    Ottenuto il raggio, è bastato inserirlo nelle equazioni \eqref{caricapos}, \eqref{caricaneg} per stimare le cariche sulle goccioline d'olio.\\
     A questo punto dell'analisi, ottenute tutte le cariche delle gocce, abbiamo potuto condurre un'indagine statistica per individuare quale valore \textit{q} approssimasse al meglio una quantità che, dividendo la carica \textit{Q} totale della goccia, restituisse un numero intero.\\
     Abbiamo potuto svolgere questa indagine sotto l'ipotesi che la carica elettrica fondamentale, quella dell'elettrone, fosse quantizzata.\\
-    Abbiamo considerato $\{q_\alpha\}_{\alpha=1,2,\dots,M}$ cariche che abbiamo chiamato di prova.\\
+    Abbiamo considerato $\{q_\alpha\}_{\alpha=1,2,\dots,M}$ cariche che abbiamo chiamato di \textit{prova}.\\
     La scelta di queste è arbitraria e noi le abbiamo stabilite dividendo l'intervallo $\left[1.45,1.9\right]\cdot10^{-19}~C$ in M $=400$ sottointervalli, i quali estremi erano proprio le $\{q_\alpha\}_{\alpha=1,2,\dots,M}$.
     Abbiamo poi definito la funzione 
         $$S(q_\alpha)=\sum_{k=1}^{N_{misure}} \left( \frac{Q_i}{k_i(q_\alpha)} - q_\alpha\right) ~~con~~ k_i(q_\alpha)=\left\lfloor \frac{Q_i}{q_\alpha + 0.5} \right\rfloor$$
-    detta scarto quadratico medio, utile per determinare quanto la carica n-esima di prova si discostasse dal quantificare la carica quantizzata elementare.\\
-    Ovviamente, ottimizzando questa funzione siamo riusciti a determinare tale carica di prova e di conseguenza anche la carica dell'elettrone.\\
+    detta \textit{scarto quadratico medio}, utile per determinare quanto la carica n-esima di prova si discostasse dal quantificare la carica quantizzata elementare.\\
+    Il valore di $q_alpha$ che minimizza questa funzione di loss coincide con il valore della carica elettrica dell'elettrone.
     Minimizzando la funzione $S(q_\alpha)$, si trova che il suo minimo coincide con la quantità:
         $$q_{vero}=\frac{1}{N_{misure}}\cdot \sum_{i=1}^{N_{misure}} \frac{Q_i}{k_i}$$
-    Abbiamo infine assegnato alla misura un errore che corrispondesse alla discrepanza standardizzata della media:
+    Abbiamo infine assegnato alla misura un errore che corrispondesse alla deviazione standard della media:
         $$\sigma_{\overline{q}} = \sqrt{\frac{S(\overline{q})}{N \cdot (N-1)}} ~~con~~ N=N_{misure}$$
 
     \input{graph1}
