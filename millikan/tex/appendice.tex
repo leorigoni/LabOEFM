@@ -1,0 +1,38 @@
+\section{Appendice}
+\subsection{Equazioni utili}
+    \begin{equation}
+    \label{raggio}
+        r_0 = \sqrt{\left( \frac{b}{2p} \right)^2 + \frac{9\eta v_r}{2g(\rho_{olio} - \rho_{aria})}} -  \frac{b}{2p}
+    \end{equation}
+
+    \begin{equation}
+    \label{caricapos}
+        q = -\frac{4}{3}\pi r_0^3 (\rho_{olio} - \rho_{aria}) \frac{g}{E}\left( 1 - \frac{v_e}{v_r} \right)
+    \end{equation}
+
+    \begin{equation}
+    \label{caricaneg}
+        q = -\frac{4}{3}\pi r_0^3 (\rho_{olio} - \rho_{aria}) \frac{g}{E}\left( 1 + \frac{\abs{v_e}}{v_r} \right)
+    \end{equation}
+\subsection{Parametri utilizzati}
+Alleghiamo qui la tabella con i parametri da noi utilizzati nei calcoli:
+    \begin{center}
+        \begin{tabular}{ |c|c|c| }
+             \hline
+             Pressione & $101325~\mathrm{Pa}$ \\
+             \hline
+             b & $8.2\cdot10^{-3}$ \\
+             \hline
+             Forza di gravità & $9.8067~\mathrm{m/s^2}$ \\ 
+             \hline
+             $\rho_{aria}$ & $1.2930~\mathrm{kg/m^3}$ \\ 
+             \hline
+             $\rho_{olio}$ & $860~\mathrm{kg/m^3}$ \\ 
+             \hline
+        \end{tabular}
+    \end{center}
+    \subsection{Tabelle delle misure non rigettate}
+    A seguito vengono riportate tutte le tabelle contenenti le misure non rigettate.
+        \input{vr}
+        \input{qp}
+        \input{qm}
