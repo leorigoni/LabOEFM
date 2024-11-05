@@ -27,7 +27,7 @@ int main() {
         measurements.push_back({value, error});
     }
 
-    if (measurements.size() < 13) {
+    if (measurements.size() < 12) {
         std::cerr << "Errore: il file deve contenere almeno 13 misure." << std::endl;
         return 1;
     }
@@ -36,7 +36,7 @@ int main() {
     TGraphErrors* graph = new TGraphErrors(12);
 
     // Creazione del grafico con le prime 12 misure
-    for (int i = 0; i < 12; ++i) {
+    for (int i = 0; i < 11; ++i) {
         graph->SetPoint(i, i + 1, measurements[i].value);
         graph->SetPointError(i, 0, measurements[i].error);
     }
@@ -47,19 +47,19 @@ int main() {
     graph->Draw("AP");
 
     // Calcolo della media pesata
-    double weightedError=measurements[12].error;
-    double weightedMeanValue=measurements[12].value;
+    double weightedError=measurements[11].error;
+    double weightedMeanValue=measurements[11].value;
 
     // Disegna la linea orizzontale per la media pesata
-    TLine* line = new TLine(0, weightedMeanValue, 13, weightedMeanValue);
+    TLine* line = new TLine(0, weightedMeanValue, 12, weightedMeanValue);
     line->SetLineColor(kGreen);
     line->SetLineStyle(1);
     line->Draw("same");
-        TLine* line1 = new TLine(0, weightedMeanValue+weightedError, 13, weightedMeanValue+weightedError);
+        TLine* line1 = new TLine(0, weightedMeanValue+weightedError, 12, weightedMeanValue+weightedError);
     line1->SetLineColor(kRed);
     line1->SetLineStyle(2);
     line1->Draw("same");
-        TLine* line2 = new TLine(0, weightedMeanValue-weightedError, 13, weightedMeanValue-weightedError);
+        TLine* line2 = new TLine(0, weightedMeanValue-weightedError, 12, weightedMeanValue-weightedError);
     line2->SetLineColor(kRed);
     line2->SetLineStyle(2);
     line2->Draw("same");
