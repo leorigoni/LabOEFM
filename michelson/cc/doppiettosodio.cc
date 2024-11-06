@@ -49,10 +49,15 @@ int main() {
     // Calcolo della media pesata
     double weightedError=measurements[11].error;
     double weightedMeanValue=measurements[11].value;
+    double truevalue=0.6e-9;
 
     // Disegna la linea orizzontale per la media pesata
+    TLine* line0 = new TLine(0, truevalue, 12, truevalue);
+    line0->SetLineColor(kGreen);
+    line0->SetLineStyle(1);
+    line0->Draw("same");    
     TLine* line = new TLine(0, weightedMeanValue, 12, weightedMeanValue);
-    line->SetLineColor(kGreen);
+    line->SetLineColor(kRed);
     line->SetLineStyle(1);
     line->Draw("same");
         TLine* line1 = new TLine(0, weightedMeanValue+weightedError, 12, weightedMeanValue+weightedError);
@@ -80,6 +85,7 @@ int main() {
     delete line;
     delete line1;
     delete line2;
+    delete line0;
 
     return 0;
 }
