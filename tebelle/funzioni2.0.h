@@ -34,7 +34,8 @@ vector<double> order(){
     cout << "Inserire l'ordine di grandezza desiderarato per ciascuna colonna: " << endl;
     string tmp;
     while(cin >> tmp && tmp!="fine"){
-        double tmps = stod(tmp);
+        double tmps=stod(tmp);
+        o.push_back(tmps);
         o.push_back(tmps);
     }
     cout << endl;
@@ -48,16 +49,21 @@ string errateyn(){
     cin.ignore();
     return yn;
 }
-vector<int> misurerr(){
+vector<int> misurerr(string yn){
     vector<int> e;
-    cout << "Inserire il numero delle righe in cui si trovano le misure errate: " << endl;
-    int tmp;
-    string tmps;
-    while(cin >> tmp && tmps!="fine"){
-        e.push_back(tmp);
-        cin.ignore();
+    if(yn=="si"||yn=="s"||yn=="yes"||yn=="y"){
+        cout << "Inserire il numero delle righe in cui si trovano le misure errate: " << endl;
+        int tmp;
+        string tmps;
+        while(cin >> tmp && tmps!="fine"){
+            e.push_back(tmp);
+            cin.ignore();
+        }
+        return e;
+    }else{
+        return e;
     }
-    return e;
+
 }
 stringstream caption(){
     stringstream c;
@@ -77,7 +83,7 @@ string outputname(){
 }
 
 //open+copy data
-vector<double> read(string inname){
+vector<vector<double>> read(vector<string> &v, string inname){
     ifstream input;
     input.open(inname, ios::in);
     if(!input.is_open()){
@@ -85,13 +91,26 @@ vector<double> read(string inname){
         cout << "Apertura file non riuscita." << endl;
         input.clear();
     }
-    vector<double> tmp;
-    double mom;
-    while(input >> mom){
-        tmp.push_back(mom);
+    vector<vector<double>> m(v.size()*2);
+    double tmp;
+    while(true){
+        for(int i=0; i<(v.size()*2); i++){
+            if (!(input >> tmp)){
+                input.close();
+                return m;
+            }
+            m[i].push_back(tmp);
+        }
     }
-    input.close();
-    return tmp;
+}
+void convert(vector<vector<double>> &m, vector<double> &o){
+    for(int i=0; i<m.size(); i++){
+        for(int k=0; k<m[i].size(); k++){
+            int tmp=static_cast<int>(log10(fabs(m[i][k])));
+            int d=o[i]-tmp;
+            m[i][k]=m[i][k]*pow(10, d);
+        }
+    }
 }
 
 //sstream
@@ -120,66 +139,25 @@ string header(vector<string> &v){
     nametext << "$ " << v[v.size()-1] << " $\\\\";
     return nametext.str();
 }
-void convert(const std::vector<std::string>& v, std::vector<double>& m, const std::vector<double>& o) {
-    // Assumiamo che il numero di colonne sia `v.size()`
-    size_t num_colonne = v.size();
-
-    if (o.size() != num_colonne) {
-        std::cerr << "Errore: il vettore degli ordini 'o' deve avere la stessa dimensione di 'v'.\n";
-        return;
-    }
-
-    // Itera su tutte le righe del file
-    for (size_t i = 0; i < m.size(); i += num_colonne * 2) {
-        for (size_t j = 0; j < num_colonne; ++j) {
-            // Calcola gli indici della misura e dell'errore
-            size_t misura_idx = i + j * 2;
-            size_t errore_idx = misura_idx + 1;
-
-            // Calcola l'ordine corrente della misura
-            int ordine_corrente_misura = static_cast<int>(std::floor(std::log10(std::abs(m[misura_idx]))));
-            int differenza_misura = static_cast<int>(o[j]) - ordine_corrente_misura;
-            m[misura_idx] = m[misura_idx] * std::pow(10, -differenza_misura);
-
-            // Calcola l'ordine corrente dell'errore
-            int ordine_corrente_errore = static_cast<int>(std::floor(std::log10(std::abs(m[errore_idx]))));
-            int differenza_errore = static_cast<int>(o[j]) - ordine_corrente_errore;
-            m[errore_idx] = m[errore_idx] * std::pow(10, -differenza_errore);
+string measure(vector<vector<double>> &m, vector<int> &e){
+    stringstream measuretext;
+    for(int i=0; i<m.size(); i++){
+        measuretext << "        \\hline" << endl;
+        for(int k=0; k<m[i].size(); k+=2){
+            if(e.empty()){
+                measuretext << "        $ ("
+                            << scientific << setprecision(3)
+                            << m[i][k] << " \\pm " << m[i][k + 1]
+                            << ") $";
+                if(k+2<m[i].size()){
+                    measuretext << " & ";
+                }
+            }else{
+                break;
+            }
         }
     }
-}
-
-
-
-
-
-string measures(vector<double> &m, vector<string> &v, vector<double> &o){
-    stringstream datatext;
-    for(int i=0; i<m.size()-v.size(); i+=v.size()){
-        datatext << "        \\hline" << endl;
-        datatext << "        ";
-        for(int k=i; k<i+v.size()-1; k+=2){
-            datatext << "$ (" << m[k] << " \\pm " << m[k+1] << ") \\cdot $ & ";
-        }
-        datatext << "$ " << m[i+1] << " $\\\\" << endl;
-    }
-    datatext << "        \\hline" << endl;
-    datatext << "        ";
-    for(int i=m.size()-v.size(); i<m.size()-1; i++){
-        datatext << "$ " << m[i] << " $ & ";
-    }
-    datatext << "$ " << m[m.size()-1] << " $\\\\";
-    return datatext.str();
-}
-string measures(vector<double> &m, vector<string> &v, vector<double> &o, vector<int> &e){
-    stringstream datatext;
-    datatext << "        \\hline" << endl;
-    datatext << "        ";
-    for(int i=0; i<m.size()-1; i++){
-        datatext << "$ " << m[i] << " $ & ";
-    }
-    datatext << "$ " << m[m.size()-1] << " $\\\\";
-    return datatext.str();
+    return measuretext.str();
 }
 string endtabular(){
     stringstream tabulartext;

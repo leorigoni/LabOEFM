@@ -1,4 +1,4 @@
-#include"funzioni.h"
+#include"funzioni2.0.h"
 
 int main(){
 //preliminary
@@ -7,21 +7,16 @@ int main(){
     vector<string> v=measuresname();
     vector<double> o=order();
     string yn=errateyn();
-    vector<int> e;
-    if(yn=="si"||yn=="s"||yn=="yes"||yn=="y"){
-        e=misurerr();
-    }
+    vector<int> e=misurerr(yn);
     stringstream c=caption();
     string outname=outputname();
 
-    vector<vector<double> m> n;
-
 //input file
     inname=inname+".txt";
-    vector<double> m=read(inname);
-    cout << m[0] <<  endl;
-    convert(v, m, o);
-    cout << m[0] <<  endl;
+    vector<vector<double>> m=read(v, inname);
+    cout << m[0][0] << " " << m[1][0] << endl;
+    convert(m, o);
+    cout << m[0][0] << " " << m[1][0] << endl;
 
 //output file
     ofstream output;
@@ -30,13 +25,10 @@ int main(){
     output << top() << endl;
     output << columns(v) << endl;
     output << header(v) << endl;
-    if(yn=="si"||yn=="s"||yn=="yes"||yn=="y"){
-        output << measures(m, v, o, e) << endl;
-    }else{
-        output << measures(m, v, o) << endl;
-    }
+    output << measure(m, e) << endl;
     output << endtabular() << endl;
     output << caption(c.str()) << endl;
     output << endtable() << endl;
-    cout << "Tebella creata, da TABSLAYER, nel file: " << outname << endl;
+    cout << "Tebella creata, da Trombelle, nel file: " << outname << endl;
+    return 0;
 }
