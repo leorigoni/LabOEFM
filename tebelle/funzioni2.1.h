@@ -196,25 +196,25 @@ string measures(vector<vector<misura>> &m){
                 if(tmp.new_o!=0){
                     measurestext << " $ (" << fixed << setprecision(tmp.prec) << tmp.mis 
                                           << " \\pm " << fixed << setprecision(tmp.prec) << tmp.err 
-                                          << ") \\cdot 10^{" << tmp.new_o << "} $ ";
+                                          << ") \\cdot 10^{" << tmp.new_o << "} $";
                 }else{
                     measurestext << " $ " << fixed << setprecision(tmp.prec) << tmp.mis 
-                                          << " \\pm " << fixed << setprecision(tmp.prec) << tmp.err << " $ ";
+                                          << " \\pm " << fixed << setprecision(tmp.prec) << tmp.err << " $";
                 }
                 if(k<m.size()-1){
-                    measurestext << "&";
+                    measurestext << " &";
                 }
             }else if(tmp.cw==1){
                 if(tmp.new_o!=0){
                 measurestext << " \\textcolor{red}{$ (" << fixed << setprecision(tmp.prec) << tmp.mis 
                                       << " \\pm " << fixed << setprecision(tmp.prec) << tmp.err 
-                                      << ") \\cdot 10^{" << tmp.new_o << "} $} ";
+                                      << ") \\cdot 10^{" << tmp.new_o << "} $}";
                 }else{
                     measurestext << " \\textcolor{red}{$ " << fixed << setprecision(tmp.prec) << tmp.mis 
-                                          << " \\pm " << fixed << setprecision(tmp.prec) << tmp.err << " $} ";
+                                          << " \\pm " << fixed << setprecision(tmp.prec) << tmp.err << " $}";
                 }
                 if(k<m.size()-1){
-                    measurestext << "&";
+                    measurestext << " &";
                 } 
             }
         }
