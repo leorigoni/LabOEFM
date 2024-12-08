@@ -28,5 +28,6 @@ int main(){
     output << endtable() << endl;
     output.close();
     cout << "Tebella creata, da Tebelle, nel file: " << outname << endl;
+    
     return 0;
 }
