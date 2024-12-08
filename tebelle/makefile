@@ -1,18 +1,12 @@
-TT=tabmaker9000.cc
-EE=funzioni.h
-BB=tabslayer
-CC=tebellinator.cc
-AA=funzioni2.0.h
-MM=trombelle
+FF=tabdestroyer.cc
+HH=funzioni2.1.h
+RR=tebelle
 
-#$(BB): $(TT) $(EE)
-#	g++ -o $(BB) $(TT)
-
-$(MM): $(CC) $(AA)
-	g++ -o $(MM) $(CC)
+$(RR): $(FF) $(HH)
+	g++ -o $(RR) $(FF)
 
 run:
-	./$(MM)
+	./$(RR)
 
 clean:
-	rm $(BB)
+	rm $(RR)

@@ -5,7 +5,7 @@ int main(){
     instructions();
     string inname=inputname();
     vector<string> v=measuresname();
-    vector<double> o=order();
+    vector<double> no=neworder();
     string yn=errateyn();
     vector<int> e=misurerr(yn);
     stringstream c=caption();
@@ -14,6 +14,7 @@ int main(){
 //input file
     inname=inname+".txt";
     vector<vector<double>> m=read(v, inname);
+    vector<int> oo=oldorder(m);
     cout << m[0][0] << " " << m[1][0] << endl;
     convert(m, o);
     cout << m[0][0] << " " << m[1][0] << endl;

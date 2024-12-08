@@ -2,15 +2,15 @@
 #include <iomanip>
 #include <cmath>
 
+using namespace std;
+
 int main() {
-    // Definizione del numero originale
-    double numero_originale = 8.9273e+08;
-
-    // Conversione in formato 892.73e+06
-    double numero_convertito = numero_originale / pow(10, 7); // Dividiamo per 10^3
-
-    // Stampa del risultato
-    std::cout << numero_convertito << std::endl;
-
+    int n=0;
+    cout << "N spostamenti: ";
+    cin >> n;
+    cout << endl;
+    double numero_originale=4.56;
+    double numero_convertito=numero_originale*pow(10, n);
+    cout << numero_convertito << endl;
     return 0;
 }

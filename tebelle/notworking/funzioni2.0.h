@@ -29,7 +29,7 @@ vector<string> measuresname(){
     cout << endl;
     return v;
 }
-vector<double> order(){
+vector<double> neworder(){
     vector<double> o;
     cout << "Inserire l'ordine di grandezza desiderarato per ciascuna colonna: " << endl;
     string tmp;
@@ -101,6 +101,11 @@ vector<vector<double>> read(vector<string> &v, string inname){
             }
             m[i].push_back(tmp);
         }
+    }
+}
+vector<int> oldorder(vector<vector<double>> &m){
+    for(int i=0; i<m.size(); i++){
+        
     }
 }
 void convert(vector<vector<double>> &m, vector<double> &o){
