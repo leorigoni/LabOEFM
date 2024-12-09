@@ -2,6 +2,7 @@
 
 int main(){
     //Preliminary
+    instructions();
     string inname=inputname();
     vector<vector<misura>> m=read(inname);
     vector<string> v=measuresname(m);

@@ -20,6 +20,22 @@ struct misura{
 };
 
 //Preliminary
+void instructions(){
+    cout << endl;
+    cout << "Il seguente programma è utile per creare in maniera semplice e veloce tabelle in LaTeX," << endl;
+    cout << "a partire da un singolo file contenete le misure e fornendo le diverse variabili richieste in seguito." << endl;
+    cout << endl;
+    cout << "N.B." << endl;
+    cout << "-si precisa che il file di input delle misure deve essere strutturato come nel seguente esempio:" << endl;
+    cout << endl;
+    cout << "5.825e+03 3.545e+00 2.500e-04 2.000e-05 3.079e+08 2.464e+07" << endl;
+    cout << "5.825e+03 3.545e+00 2.600e-04 2.000e-05 2.961e+08 2.278e+07" << endl;
+    cout << "5.265e+03 3.545e+00 2.800e-04 2.000e-05 2.485e+08 1.775e+07" << endl;
+    cout << "5.228e+03 3.545e+00 2.800e-04 2.000e-05 2.468e+08 1.763e+07" << endl;
+    cout << endl;
+    cout << "con alternate le colonne di misure-errore e le virgole trasformate tutte in punti." << endl;
+    cout << endl;
+}
 string inputname(){
     string inname;
     cout << endl;
@@ -64,6 +80,7 @@ vector<vector<misura>> read(string inname){
 vector<string> measuresname(vector<vector<misura>> &m){
     vector<string> v;
     cout << "Inserire i nomi delle colonne della tabella, in LaTeX:" << endl;
+    cout << "(ricordarsi di usare '~' per gli spazi)" << endl;
     for(int i=0; i<m.size(); i++){
         string tmp;
         cin >> tmp;
