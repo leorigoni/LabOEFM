@@ -161,17 +161,16 @@ string outputname(){
 void oldorder(vector<vector<misura>> &m){
     for(int i=0; i<m.size(); i++){
         for(int k=0; k<m[i].size(); k++){
-            misura &tmp=m[i][k];
-            tmp.ord_m=static_cast<int>(log10(fabs(tmp.mis)));
-            tmp.ord_e=static_cast<int>(log10(fabs(tmp.err)));
+            m[i][k].ord_m=static_cast<int>(log10(fabs(m[i][k].mis)));
+            m[i][k].ord_e=static_cast<int>(log10(fabs(m[i][k].err)));
         }
     }
 }
 void convert(vector<vector<misura>> &m){
-    for(auto &col:m){
-        for(auto &tmp:col){
-            tmp.mis=tmp.mis*pow(10, -tmp.ord_m)*pow(10, -fabs(tmp.new_o-tmp.ord_m));
-            tmp.err=tmp.err*pow(10, -tmp.ord_e)*pow(10, -fabs(tmp.new_o-tmp.ord_e));
+    for(int i=0; i<m.size(); i++){
+        for(int k=0; k<m[i].size(); k++){
+            m[i][k].mis=m[i][k].mis*pow(10, -m[i][k].ord_m)*pow(10, -fabs(m[i][k].new_o-m[i][k].ord_m));
+            m[i][k].err=m[i][k].err*pow(10, -m[i][k].ord_e)*pow(10, -fabs(m[i][k].new_o-m[i][k].ord_e));
         }
     }
 }
