@@ -56,7 +56,7 @@ int main() {
     graph->SetTitle(" ");
 
     // Impostare il range dell'asse Y
-    graph->GetYaxis()->SetRangeUser(0, 18e-39);
+    graph->GetYaxis()->SetRangeUser(0, 9e-39);
     // Impostare il range dell'asse X dinamicamente
     /*double x_min = *std::min_element(x_values.begin(), x_values.end());
     double x_max = *std::max_element(x_values.begin(), x_values.end());
@@ -78,27 +78,27 @@ int main() {
 
     // Creare la retta che si estende da y=0 fino al massimo di y
     TLine *line_object = new TLine(x_pos, 0,
-                                    x_pos, 18e-39);
+                                    x_pos, 9e-39);
     line_object->SetLineColor(kGreen);
     line_object->SetLineWidth(1);
     line_object->Draw();
 
     // Aggiungere una retta verde a x = 1.602176634e-19
-    double x_errp = 1.6185E-19;
+    double x_errp = 1.6066E-19;
 
     // Creare la retta che si estende da y=0 fino al massimo di y
-    TLine *line_objectp = new TLine(x_errp, 3.5e-39,
-                                    x_errp, 4.5e-39);
+    TLine *line_objectp = new TLine(x_errp, 1.6e-39,
+                                    x_errp, 2.6e-39);
     line_objectp->SetLineColor(kRed);
     line_objectp->SetLineWidth(1);
     line_objectp->Draw();
 
     // Aggiungere una retta verde a x = 1.602176634e-19
-    double x_errm = 1.5935E-19;
+    double x_errm = 1.5834E-19;
 
     // Creare la retta che si estende da y=0 fino al massimo di y
-    TLine *line_objecmt = new TLine(x_errm, 3.5e-39,
-                                    x_errm, 4.5e-39);
+    TLine *line_objecmt = new TLine(x_errm, 1.6e-39,
+                                    x_errm, 2.6e-39);
     line_objecmt->SetLineColor(kRed);
     line_objecmt->SetLineWidth(1);
     line_objecmt->Draw();

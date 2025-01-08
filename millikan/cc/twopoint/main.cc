@@ -11,8 +11,8 @@ int main() {
 
     // Dati sperimentali
     double x_exp[1] = {1}; // Asse x dummy (per collocare il punto sperimentale)
-    double y_exp[1] = {1.6060e-19}; // Valore della carica elementare sperimentale
-    double y_error[1] = {1.24519032834983e-21}; // Errore sperimentale
+    double y_exp[1] = {1.5952E-19}; // Valore della carica elementare sperimentale
+    double y_error[1] = {1.1567E-21}; // Errore sperimentale
 
     // Dati teorici
     double x_theory[1] = {1}; // Asse x dummy per il punto teorico
@@ -32,7 +32,7 @@ int main() {
     graph_exp->GetYaxis()->SetTitleOffset(1.7);
     graph_exp->GetYaxis()->SetTitleSize(0.03);
     graph_exp->GetYaxis()->SetTitle("q [C]");
-    graph_exp->GetYaxis()->SetRangeUser(1.5900e-19, 1.6200e-19);
+    graph_exp->GetYaxis()->SetRangeUser(1.5800e-19, 1.6100e-19);
     graph_exp->GetXaxis()->SetLimits(0, 2);
 
     // Disegna il grafico con errore
@@ -46,7 +46,7 @@ int main() {
     graph_theory->Draw("P SAME");
 
     // Aggiunta della legenda
-    TLegend *legend = new TLegend(0.57, 0.7, 0.9, 0.9);
+    TLegend *legend = new TLegend(0.57, 0.1, 0.9, 0.3);
     legend->AddEntry(graph_exp, "exp. elementary charge", "p");
     legend->AddEntry(graph_theory, "elementary charge", "p");
     legend->Draw();
