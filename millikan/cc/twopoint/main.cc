@@ -54,7 +54,7 @@ int main() {
     // Aggiunta delle etichette per i valori
     TLatex latex;
     latex.SetTextSize(0.03);
-    latex.DrawLatex(1.05, 1.6060e-19, "1.6060E-19 C");
+    latex.DrawLatex(1.05, 1.5952E-19, "1.5952E-19 C");
     latex.DrawLatex(1.05, 1.6020e-19, "1.6020E-19 C");
 
     // Aggiunta della griglia solo sull'asse y
