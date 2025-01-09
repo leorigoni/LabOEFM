@@ -53,7 +53,7 @@ int main() {
     graph->Draw("AP");
     canvas->SetGrid();
 
-    // Aggiungere una retta verde a x = 1.602176634e-19
+        // Aggiungere una retta verde a x = 1.602176634e-19
     double x_pos = 1.602176634e-19;
 
     // Creare la retta che si estende da y=0 fino al massimo di y
@@ -63,30 +63,28 @@ int main() {
     line_object->SetLineWidth(1);
     line_object->Draw();
 
-    auto min_y_iter = std::min_element(y_values.begin(), y_values.end());
-    int min_y_index = std::distance(y_values.begin(), min_y_iter);
-    TMarker *min_marker = new TMarker(x_values[min_y_index], y_values[min_y_index], 20);
+    // Inserimento da parte dell'utente del punto minimo desiderato
+    double user_x=1.6005E-19;
+    double user_y= 3e-39;
+    double user_err_low=1.5893E-19;
+    double user_err_high=1.6107E-19;
+
+    // Visualizzazione del punto minimo specificato dall'utente
+    TMarker *min_marker = new TMarker(user_x, user_y, 20);
     min_marker->SetMarkerColor(kRed);
     min_marker->SetMarkerSize(0.5);
     min_marker->Draw();
 
-    // Calcolo delle barre di errore
-    double x_min = x_values[min_y_index];
-    double error_percent = 0.01; // 1% di errore, puoi modificare questo valore
-    double x_err = x_min * error_percent;
-
-    double x_errp = x_min + x_err;
-    double x_errm = x_min - x_err;
-
-    TLine *line_objectp = new TLine(x_errp, 2.7e-39, x_errp, 3.3e-39);
-    line_objectp->SetLineColor(kRed);
-    line_objectp->SetLineWidth(1);
-    line_objectp->Draw();
-
-    TLine *line_objectm = new TLine(x_errm, 2.7e-39, x_errm, 3.3e-39);
+    // Visualizzazione delle barre d'errore specificate dall'utente
+    TLine *line_objectm = new TLine(user_err_low, 2.7e-39, user_err_low, 3.3e-39);
     line_objectm->SetLineColor(kRed);
     line_objectm->SetLineWidth(1);
     line_objectm->Draw();
+
+    TLine *line_objectp = new TLine(user_err_high, 2.7e-39, user_err_high, 3.3e-39);
+    line_objectp->SetLineColor(kRed);
+    line_objectp->SetLineWidth(1);
+    line_objectp->Draw();
 
     graph->GetYaxis()->SetTitleOffset(0.8);
     graph->GetYaxis()->SetTitleSize(0.03);
