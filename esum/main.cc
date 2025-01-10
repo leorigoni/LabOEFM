@@ -13,9 +13,9 @@ int main() {
 
     // Array per i punti x
     double x[3] = {1, 2, 3};
-    double y[3] = {1.70E+11, 1.69E+11, 1.73E+11};
+    double y[3] = {1.71E+11, 1.71E+11, 1.75E+11};
     double ex[3] = {0, 0, 0}; // Nessun errore su x
-    double ey[3] = {6.06E+09, 7.03E+09, 5.73E+09};
+    double ey[3] = {6.25E+09, 7.43E+09, 5.62E+09};
 
     // Creazione del canvas
     TCanvas *c1 = new TCanvas("c1", "e/m Plot", 800, 600);
