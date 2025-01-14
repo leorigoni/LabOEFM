@@ -43,6 +43,7 @@ int main() {
         graph->SetPointError(i, 0, measurements[i].error);
     }
 
+    gPad->SetGrid();
     graph->SetMarkerStyle(21);
     graph->SetMarkerSize(0.8);
     graph->GetXaxis()->SetRangeUser(0, 21);
