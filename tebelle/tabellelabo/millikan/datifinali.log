@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  8 JAN 2025 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.3)  6 MAR 2025 23:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -136,174 +136,93 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:9: LaTeX Error: Illegal character in array arg.
+/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:8: LaTeX Error: Unknown float option `H'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9     \begin
-              {tabular}{|c|c|c|c|c|c|c|c|c|}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.8 \begin{table}[H]
+                    
+Option `H' ignored and `p' used.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:9: Missing # inserted in alignment preamble.
-<to be read again> 
-                   &
-l.9     \begin
-              {tabular}{|c|c|c|c|c|c|c|c|c|}
-There should be exactly one # between &'s, when an
-\halign or \valign is being set up. In this case you had
-none, so I've put one in; maybe that will work.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:9: Missing # inserted in alignment preamble.
-<to be read again> 
-                   \cr 
-l.9     \begin
-              {tabular}{|c|c|c|c|c|c|c|c|c|}
-There should be exactly one # between &'s, when an
-\halign or \valign is being set up. In this case you had
-none, so I've put one in; maybe that will work.
+Overfull \hbox (368.55743pt too wide) in paragraph at lines 11--116
+[]  
+ []
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:10: Misplaced \noalign.
-\toprule ->\noalign 
-                    {\ifnum 0=`}\fi \@aboverulesep =\abovetopsep \global \@b...
-l.10         \toprule
-                     
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:118: Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.118 \end{table}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Missing } inserted.
-<inserted text> 
-                }
-l.11         \textbf
-                    {t~[s]} & \textbf{vr~[m/s]} & \textbf{r0~[m]} & \textbf{...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Missing } inserted.
-<inserted text> 
-                }
-l.11         \textbf
-                    {t~[s]} & \textbf{vr~[m/s]} & \textbf{r0~[m]} & \textbf{...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:120: LaTeX Error: \begin{table} on input line 8 ended by \end{document}.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.11         \textbf
-                    {t~[s]} & \textbf{vr~[m/s]} & \textbf{r0~[m]} & \textbf{...
-I'm guessing that you meant to end an alignment here.
-
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Undefined control sequence.
-\@BTrule ...\doublerulesep \fi \fi \fi \@BTswitch 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
-l.11         \textbf
-                    {t~[s]} & \textbf{vr~[m/s]} & \textbf{r0~[m]} & \textbf{...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+l.120 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11         \textbf{t~[s]} &
-                              \textbf{vr~[m/s]} & \textbf{r0~[m]} & \textbf{...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+(./datifinali.aux)
+/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:120: You can't use `\end' in internal vertical mode.
+\enddocument ...cument/end}\deadcycles \z@ \@@end 
+                                                  
+l.120 \end{document}
+                    
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11         \textbf{t~[s]} & \textbf{vr~[m/s]} &
-                                                  \textbf{r0~[m]} & \textbf{...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11 ...]} & \textbf{vr~[m/s]} & \textbf{r0~[m]} &
-                                                   \textbf{t+~[s]} & \textbf...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:120: LaTeX Error: \begin{table} on input line 8 ended by \end{document}.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11 .../s]} & \textbf{r0~[m]} & \textbf{t+~[s]} &
-                                                   \textbf{v+~[m/s]} & \text...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11 ...]} & \textbf{t+~[s]} & \textbf{v+~[m/s]} &
-                                                   \textbf{q+~[C]} & \textbf...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:120: Missing } inserted.
+<inserted text> 
+                }
+l.120 \end{document}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11 ...]} & \textbf{v+~[m/s]} & \textbf{q+~[C]} &
-                                                   \textbf{t-~[s]} & \textbf...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+)
+! Emergency stop.
+<*> ...tebelle/tabellelabo/millikan/datifinali.tex
+                                                  
+*** (job aborted, no legal \end found)
 
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11 .../s]} & \textbf{q+~[C]} & \textbf{t-~[s]} &
-                                                   \textbf{v-~[m/s]} & \text...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:11: Misplaced alignment tab character &.
-l.11 ...]} & \textbf{t-~[s]} & \textbf{v-~[m/s]} &
-                                                   \textbf{q-~[C]} \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:12: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{\fi }\cr 
-                                  
-l.12         \midrule
-                     
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-/home/leorigoni/laboefm/tebelle/tabellelabo/millikan/datifinali.tex:12: Misplaced \noalign.
-\midrule ->\noalign 
-                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@..
+ 
+Here is how much of TeX's memory you used:
+ 1278 strings out of 480171
+ 19775 string characters out of 5894489
+ 357104 words of memory out of 5000000
+ 19288 multiletter control sequences out of 15000+600000
+ 470021 words of font info for 31 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 54i,10n,62p,281b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
